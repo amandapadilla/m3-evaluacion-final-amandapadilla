@@ -1,8 +1,8 @@
 import React from "react";
 // import { Route, Switch } from "react-router-dom";
 import { getDataFromServer } from "../services/getDataFromServer";
-// import Filter from "./Filter";
-// import List from "./List";
+import Filter from "./Filter";
+import List from "./List";
 
 import "../stylesheets/App.scss";
 
@@ -32,53 +32,22 @@ class App extends React.Component {
     });
   }
   render() {
-    const { characters, inputFilter, getInputFilter } = this.state;
-    console.log(characters, inputFilter);
+    const { characters, inputFilter } = this.state;
     return (
       <div className="App">
-        <header>
-          <div>
+        <header className="header">
+          <div className="header__logo">
             <img
               src="./logo.png"
               alt="Welcome to Rick and Morty characters directory"
             />
           </div>
         </header>
-        <div>
-          <label htmlFor="textFilter">Search a character</label>
-          <input
-            type="text"
-            id="textFilter"
-            placeholder="Write their name here"
-            onChange={getInputFilter}
-            value={inputFilter}
-          />
-        </div>
-        <div>
-          <ul>
-            {characters
-              .filter(myCharacter =>
-                myCharacter.name
-                  .toUpperCase()
-                  .includes(inputFilter.toUpperCase())
-              )
-              .map(character => (
-                <li className="character" key={character.id}>
-                  <div>
-                    <img src={character.image} alt={character.name} />
-                    <h2>{character.name}</h2>
-                    <p>{character.species}</p>
-                  </div>
-                </li>
-              ))}
-          </ul>
-        </div>
-        {/* <Filter
+        <Filter
           getInputFilter={this.getInputFilter}
           inputFilter={inputFilter}
-          characters={characters}
-        /> */}
-        {/* <List /> */}
+        />
+        <List characters={characters} inputFilter={inputFilter} />
       </div>
     );
   }
