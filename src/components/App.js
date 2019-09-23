@@ -1,9 +1,9 @@
 import React from "react";
-// import { Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import { getDataFromServer } from "../services/getDataFromServer";
-import Filter from "./Filter";
-import List from "./List";
-
+import Home from "./Home";
+import Header from "./Header";
+import Detail from "./Detail";
 import "../stylesheets/App.scss";
 
 class App extends React.Component {
@@ -35,19 +35,25 @@ class App extends React.Component {
     const { characters, inputFilter } = this.state;
     return (
       <div className="App">
-        <header className="header">
-          <div className="header__logo">
-            <img
-              src="./logo.png"
-              alt="Welcome to Rick and Morty characters directory"
-            />
-          </div>
-        </header>
-        <Filter
-          getInputFilter={this.getInputFilter}
-          inputFilter={inputFilter}
-        />
-        <List characters={characters} inputFilter={inputFilter} />
+        <Header />
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={() => {
+              return (
+                <Home
+                  getInputFilter={this.getInputFilter}
+                  inputFilter={inputFilter}
+                  characters={characters}
+                />
+              );
+            }}
+          />
+          <Route path="/detail" component={Detail} />
+        </Switch>
+
+        <Detail characters={characters} />
       </div>
     );
   }
