@@ -34,16 +34,15 @@ class App extends React.Component {
     );
     this.setState({
       inputFilter: inputFilter,
-      character: character
+      characters: character
     });
   }
-  renderCharacterDetail() {
-    const id = parseInt(this.match.params.id);
-    const character = this.state.character.find(
+  renderCharacterDetail(routerProps) {
+    const id = parseInt(routerProps.match.params.id);
+    const character = this.state.characters.find(
       character => character.id === id
     );
-
-    console.log(character);
+    return character;
   }
 
   render() {
@@ -69,11 +68,10 @@ class App extends React.Component {
             <Route
               path="/detail/:id"
               render={routerProps => {
-                console.log(routerProps);
                 return (
                   <CharacterDetail
                     routerProps={routerProps}
-                    characters={characters}
+                    characters={this.renderCharacterDetail(routerProps)}
                   />
                 );
               }}

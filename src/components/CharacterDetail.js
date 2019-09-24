@@ -2,9 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const CharacterDetail = props => {
-  // const { routerProps, characters } = props;
-  // const id = parseInt(routerProps.match.params.id);
-  // const character = characters.find(character => character.id === id); //Hacer función en App con un método find
+  const { routerProps, characters } = props;
+
   // const { name, image } = character[0];
   // console.log(character[0]); //condicional con Loading
 
