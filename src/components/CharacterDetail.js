@@ -2,9 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const CharacterDetail = props => {
-  const { routerProps, characters } = props;
-  const id = parseInt(routerProps.match.params.id);
-  console.log(id);
+  const { characters } = props;
   if (characters) {
     const { image, name, species, origin, episode, status } = characters;
     const isDeadOrAlive = () => {
