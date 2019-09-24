@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const Filters = props => {
   const { getInputFilter, inputFilter } = props;
@@ -18,4 +19,10 @@ const Filters = props => {
     </div>
   );
 };
+
+Filters.propTypes = {
+  getInputFilter: PropTypes.func.isRequired,
+  inputFilter: PropTypes.string.isRequired
+};
+
 export default Filters;

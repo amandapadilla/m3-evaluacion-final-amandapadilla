@@ -1,7 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
 import CharacterCard from "./CharacterCard";
 import { Link } from "react-router-dom";
-// import PropTypes from "prop-types";
 
 const CharacterList = props => {
   const { characters } = props;
@@ -35,6 +35,9 @@ const CharacterList = props => {
       </div>
     );
   }
+};
+CharacterList.propTypes = {
+  characters: PropTypes.arrayOf(PropTypes.object).isRequired
 };
 
 export default CharacterList;

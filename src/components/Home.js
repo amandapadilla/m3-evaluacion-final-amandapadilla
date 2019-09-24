@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Filters from "./Filters";
 import CharacterList from "./CharacterList";
 
@@ -10,5 +11,9 @@ const Home = props => {
       <CharacterList characters={characters} inputFilter={inputFilter} />
     </React.Fragment>
   );
+};
+Home.propTypes = {
+  getInputFilter: PropTypes.func.isRequired,
+  inputFilter: PropTypes.string.isRequired
 };
 export default Home;
