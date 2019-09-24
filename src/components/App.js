@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import { getDataFromServer } from "../services/getDataFromServer";
 import Home from "./Home";
 import Header from "./Header";
-import Detail from "./Detail";
+import CharacterDetail from "./CharacterDetail";
 import "../stylesheets/App.scss";
 
 class App extends React.Component {
@@ -13,6 +13,7 @@ class App extends React.Component {
       characters: [],
       inputFilter: ""
     };
+    this.renderCharacterDetail = this.renderCharacterDetail.bind(this);
     this.getInputFilter = this.getInputFilter.bind(this);
   }
   componentDidMount() {
@@ -26,11 +27,25 @@ class App extends React.Component {
     });
   };
   getInputFilter(ev) {
+    ev.persist();
     const inputFilter = ev.currentTarget.value;
+    const character = this.state.characters.filter(myCharacter =>
+      myCharacter.name.toUpperCase().includes(inputFilter.toUpperCase())
+    );
     this.setState({
-      inputFilter: inputFilter
+      inputFilter: inputFilter,
+      character: character
     });
   }
+  renderCharacterDetail() {
+    const id = parseInt(this.match.params.id);
+    const character = this.state.character.find(
+      character => character.id === id
+    );
+
+    console.log(character);
+  }
+
   render() {
     const { characters, inputFilter } = this.state;
     return (
@@ -54,8 +69,12 @@ class App extends React.Component {
             <Route
               path="/detail/:id"
               render={routerProps => {
+                console.log(routerProps);
                 return (
-                  <Detail routerProps={routerProps} characters={characters} />
+                  <CharacterDetail
+                    routerProps={routerProps}
+                    characters={characters}
+                  />
                 );
               }}
             />

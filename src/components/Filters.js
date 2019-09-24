@@ -1,6 +1,6 @@
 import React from "react";
 
-const Filter = props => {
+const Filters = props => {
   const { getInputFilter, inputFilter } = props;
   return (
     <div className="form">
@@ -18,4 +18,4 @@ const Filter = props => {
     </div>
   );
 };
-export default Filter;
+export default Filters;
