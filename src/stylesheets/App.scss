@@ -18,12 +18,14 @@
   box-shadow: 3px 3px 5px pink;
   border-radius: 10px;
   color: purple;
+  text-decoration: none;
   background: linear-gradient(21deg, greenyellow, #f76ee0);
 }
 .card:hover {
-  transition: filter ease 0.5s;
   filter: invert(1);
 }
+//mediaqueries para laptop
+// transition: filter ease 0.5s;
 
 .form {
   display: flex;
@@ -80,8 +82,8 @@
     padding: 20px 20px 0 20px;
   }
   &__card--image {
-    border: 1px solid aquamarine;
-    padding: 30px;
+    width: 50vw;
+    border: 3px solid black;
     border-radius: 20px 50px 20px 50px;
   }
   &__rick-morty {

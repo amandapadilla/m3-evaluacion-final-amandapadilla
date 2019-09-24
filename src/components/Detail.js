@@ -18,7 +18,11 @@ const Detail = props => {
         Back to home!
       </Link>
       <div className="detail__card">
-        <img src="" alt="Character" className="detail__card--image" />
+        <img
+          src="https://raw.githubusercontent.com/Adalab/rick-y-morty/master/assets/img/14.jpeg"
+          alt="Character"
+          className="detail__card--image"
+        />
         <h2>Name: </h2>
         <p>Specie: </p>
         <p>Origin:</p>
