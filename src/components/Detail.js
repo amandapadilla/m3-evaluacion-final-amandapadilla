@@ -8,7 +8,7 @@ const Detail = props => {
   // const { name, image } = character[0];
   // console.log(character[0]); //condicional con Loading
   return (
-    <div>
+    <div className="detail">
       <Link to="/">Volver</Link>
       {/* <img src={image} alt={name} />
       <h2>Nombre {name}</h2>

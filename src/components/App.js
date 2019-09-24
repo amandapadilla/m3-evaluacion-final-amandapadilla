@@ -36,31 +36,31 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
-        <Switch>
-          <Route
-            exact
-            path="/"
-            render={() => {
-              return (
-                <Home
-                  getInputFilter={this.getInputFilter}
-                  inputFilter={inputFilter}
-                  characters={characters}
-                />
-              );
-            }}
-          />
-          <Route
-            path="/detail/:id"
-            render={routerProps => {
-              return (
-                <Detail routerProps={routerProps} characters={characters} />
-              );
-            }}
-          />
-        </Switch>
-
-        {/* <Detail characters={characters} /> */}
+        <main className="main">
+          <Switch>
+            <Route
+              exact
+              path="/"
+              render={() => {
+                return (
+                  <Home
+                    getInputFilter={this.getInputFilter}
+                    inputFilter={inputFilter}
+                    characters={characters}
+                  />
+                );
+              }}
+            />
+            <Route
+              path="/detail/:id"
+              render={routerProps => {
+                return (
+                  <Detail routerProps={routerProps} characters={characters} />
+                );
+              }}
+            />
+          </Switch>
+        </main>
       </div>
     );
   }
