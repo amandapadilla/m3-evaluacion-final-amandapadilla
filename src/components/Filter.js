@@ -11,7 +11,7 @@ const Filter = props => {
         className="form__input-text"
         type="text"
         id="textFilter"
-        placeholder="Write their name here"
+        placeholder="Write here!"
         onChange={getInputFilter}
         value={inputFilter}
       />

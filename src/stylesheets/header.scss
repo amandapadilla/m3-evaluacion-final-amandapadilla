@@ -1,0 +1,25 @@
+.header {
+  background-image: url(../images/psy-copia.jpg);
+  background-size: cover;
+  background-color: purple;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px;
+
+  &__animation {
+    width: 40%;
+  }
+  &__logo {
+    width: 60%;
+    transform: rotate(10deg);
+  }
+}
+
+// @media all and (min-width: 320px) {
+//   .header {
+//     &__animation {
+
+//     }
+//   }
+// }

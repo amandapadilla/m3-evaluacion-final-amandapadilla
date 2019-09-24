@@ -2,11 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Detail = props => {
-  const { routerProps, characters } = props;
-  const id = parseInt(routerProps.match.params.id);
-  const character = characters.filter(character => character.id === id); //Hacer función en App con un método find
-  const { name, image } = character[0];
-  console.log(character[0]); //condicional con Loading
+  // const { routerProps, characters } = props;
+  // const id = parseInt(routerProps.match.params.id);
+  // const character = characters.filter(character => character.id === id); //Hacer función en App con un método find
+  // const { name, image } = character[0];
+  // console.log(character[0]); //condicional con Loading
   return (
     <div>
       <Link to="/">Volver</Link>
