@@ -9,14 +9,27 @@ const Detail = props => {
   // console.log(character[0]); //condicional con Loading
   return (
     <div className="detail">
-      <Link to="/">Volver</Link>
-      {/* <img src={image} alt={name} />
-      <h2>Nombre {name}</h2>
-      <p>{character[0].name}</p> */}
-      <p>Especie</p>
-      <p>Origen</p>
-      <p>NºdeEpisodios</p>
-      <p>Estatus: muerto o vivo</p>
+      <img
+        src="./images/pickle.png"
+        className="detail__pickle"
+        alt="Pickle Rick!!!"
+      />
+      <Link to="/" className="detail__back-home">
+        Back to home!
+      </Link>
+      <div className="detail__card">
+        <img src="" alt="Character" className="detail__card--image" />
+        <h2>Name: </h2>
+        <p>Specie: </p>
+        <p>Origin:</p>
+        <p>You have seen me in X episodes</p>
+        <p>Status: dead or alive</p>
+        <img
+          src="./images/ricky-morty.png"
+          alt="Rick and Morty"
+          className="detail__rick-morty"
+        />
+      </div>
     </div>
   );
 };

@@ -1,5 +1,3 @@
-.main {
-}
 .list {
   display: flex;
   flex-direction: column;
@@ -16,9 +14,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 10px solid greenyellow;
+  border: 7px solid greenyellow;
   box-shadow: 3px 3px 5px pink;
   border-radius: 10px;
+  color: purple;
+  background: linear-gradient(21deg, greenyellow, #f76ee0);
+}
+.card:hover {
+  transition: filter ease 0.5s;
+  filter: invert(1);
 }
 
 .form {
@@ -43,7 +47,47 @@
 
 .detail {
   height: 100vh;
-  background-color: #74e2f3;
-  background-image: url(../images/lookatme.png);
-  background-size: contain;
+  // background-color: #74e2f3;
+  // background-image: url(../images/lookatme.png);
+  // background-size: contain; clase para el condicional cuando está loading o alguien busca algo que no está.
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__pickle {
+    height: 10vh;
+    align-self: flex-start;
+    margin: 0 10px 10px 30px;
+    transform: rotate(200deg);
+  }
+
+  &__back-home {
+    align-self: flex-start;
+    margin: 0px 10px 20px 20px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 0px 50px 50px 50px;
+  }
+  &__card {
+    background-color: rgb(46, 46, 46);
+    color: aquamarine;
+    width: 60vw;
+    height: 60vh;
+    border: 3px solid black;
+    border-radius: 20px 50px 20px 50px;
+    text-align: center;
+    box-shadow: 15px 15px 0px 5px rgb(46, 46, 46);
+    padding: 20px 20px 0 20px;
+  }
+  &__card--image {
+    border: 1px solid aquamarine;
+    padding: 30px;
+    border-radius: 20px 50px 20px 50px;
+  }
+  &__rick-morty {
+    // position: absolute;
+    // right: 10px;
+    align-self: flex-end;
+    height: 15vh;
+  }
 }
