@@ -15,7 +15,7 @@
   flex-direction: column;
   align-items: center;
   border: 7px solid greenyellow;
-  box-shadow: 3px 3px 5px pink;
+  box-shadow: 3px 3px 5px purple;
   border-radius: 10px;
   color: purple;
   text-decoration: none;
@@ -23,9 +23,8 @@
 }
 .card:hover {
   filter: invert(1);
+  transition: filter ease 0.5s;
 }
-//mediaqueries para laptop
-// transition: filter ease 0.5s;
 
 .form {
   display: flex;
@@ -49,9 +48,6 @@
 
 .detail {
   height: 100vh;
-  // background-color: #74e2f3;
-  // background-image: url(../images/lookatme.png);
-  // background-size: contain; clase para el condicional cuando está loading o alguien busca algo que no está.
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -65,8 +61,9 @@
 
   &__back-home {
     align-self: flex-start;
-    margin: 0px 10px 20px 20px;
-    background-color: white;
+    margin: 0px 10px 20px 50px;
+    color: purple;
+    background-color: greenyellow;
     padding: 10px;
     border-radius: 0px 50px 50px 50px;
   }
@@ -74,22 +71,49 @@
     background-color: rgb(46, 46, 46);
     color: aquamarine;
     width: 60vw;
-    height: 60vh;
+    height: 70vh;
     border: 3px solid black;
     border-radius: 20px 50px 20px 50px;
     text-align: center;
     box-shadow: 15px 15px 0px 5px rgb(46, 46, 46);
     padding: 20px 20px 0 20px;
+
+    @media all and (min-width: 768px) {
+      width: 40vw;
+      height: 60vh;
+    }
+    @media all and (min-width: 1280px) {
+      width: 30vw;
+    }
   }
   &__card--image {
     width: 50vw;
     border: 3px solid black;
     border-radius: 20px 50px 20px 50px;
+    @media all and (min-width: 768px) {
+      width: 20vw;
+    }
   }
   &__rick-morty {
-    // position: absolute;
-    // right: 10px;
     align-self: flex-end;
     height: 15vh;
+  }
+}
+
+.fail {
+  height: 100vh;
+  background-color: #74e2f3;
+  background-image: url(../images/lookatme.png);
+  background-size: contain;
+  @media all and (min-width: 1280px) {
+    background-size: cover;
+  }
+  &__message {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+    border: 15px solid #74e2f3;
+    border-radius: 50px 50px 50px 50px;
   }
 }

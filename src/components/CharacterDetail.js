@@ -22,17 +22,17 @@ const CharacterDetail = props => {
           alt="Pickle Rick!!!"
         />
         <Link to="/" className="detail__back-home">
-          Back to home!
+          Back to hooome, mdfk!
         </Link>
         <div className="detail__card">
           <img src={image} alt={name} className="detail__card--image" />
-          <h2>Name: {name}</h2>
-          <p>Specie: {species}</p>
-          <p>Origin: {origin.name}</p>
-          <p>You have seen me in {episode.length} episodes</p>
-          <div>
-            <p>Status: {isDeadOrAlive()}</p>
-          </div>
+          <h2 className="detail__card--name">Name: {name}</h2>
+          <p className="detail__card--species">Specie: {species}</p>
+          <p className="detail__card--origin">Origin: {origin.name}</p>
+          <p className="detail__card--episode">
+            You have seen me in {episode.length} episodes
+          </p>
+          <p className="detail__card--status">Status: {isDeadOrAlive()}</p>
           <img
             src="./images/ricky-morty.png"
             alt="Rick and Morty"
@@ -44,10 +44,10 @@ const CharacterDetail = props => {
   } else {
     return (
       <div className="fail">
-        <h2 className="fail__message">
+        <p className="fail__message">
           Hi! I'm Mr. Meeseeks, look at me! Sorry, there isn't a coincidence. Oh
           no! I can't help you and will live foreveeeeeeeer!!!
-        </h2>
+        </p>
       </div>
     );
   }
