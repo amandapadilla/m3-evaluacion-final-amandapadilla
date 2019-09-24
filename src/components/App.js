@@ -29,12 +29,9 @@ class App extends React.Component {
   getInputFilter(ev) {
     ev.persist();
     const inputFilter = ev.currentTarget.value;
-    const character = this.state.characters.filter(myCharacter =>
-      myCharacter.name.toUpperCase().includes(inputFilter.toUpperCase())
-    );
+
     this.setState({
-      inputFilter: inputFilter,
-      characters: character
+      inputFilter: inputFilter
     });
   }
   renderCharacterDetail(routerProps) {
@@ -46,7 +43,10 @@ class App extends React.Component {
   }
 
   render() {
-    const { characters, inputFilter } = this.state;
+    const { inputFilter } = this.state;
+    const characters = this.state.characters.filter(myCharacter =>
+      myCharacter.name.toUpperCase().includes(inputFilter.toUpperCase())
+    );
     return (
       <div className="App">
         <Header />

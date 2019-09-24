@@ -25,15 +25,5 @@ const CharacterList = props => {
     </div>
   );
 };
-//
-// const CharacterList = props => {
-//   if (=== 0 ){
-//     return(
-//       <div>No hay personajes</div>
-//     );
-//   }else{
-//     return (<ul><Card name={props.name}/></ul>);
-//   }
-// }
 
 export default CharacterList;
